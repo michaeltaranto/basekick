@@ -1,0 +1,77 @@
+// Reset
+@base-font-size: 10;
+
+// Design Variables
+@grid-row-height: 9;
+
+@large-type-rows: 5;
+@large-type-font-modifier: 4;
+
+@medium-type-rows: 3;
+@medium-type-font-modifier: 2.1;
+
+@standard-type-rows: 2;
+@standard-type-font-modifier: 1.4;
+
+@small-type-rows: 2;
+@small-type-font-modifier: 1;
+
+// Positioning Variables
+@large-type-baseline-offset: 0.225;
+@large-type-baseline-lineHeight: (@grid-row-height * @large-type-rows) / (@large-type-font-modifier * @base-font-size);
+
+@medium-type-baseline-offset: 0.2857;
+@medium-type-baseline-lineHeight: (@grid-row-height * @medium-type-rows) / (@medium-type-font-modifier * @base-font-size);
+
+@standard-type-baseline-offset: 0.2857;
+@standard-type-baseline-lineHeight: (@grid-row-height * @standard-type-rows) / (@standard-type-font-modifier * @base-font-size);
+
+@small-type-baseline-offset: 0.3;
+@small-type-baseline-lineHeight: 1.4; // Designers request for 10px over 14px lineheight.
+
+// Rules
+html {
+  font-size: unit(@base-font-size, px);
+  font-family: sans-serif;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+h1, h2, h3, p, ul, li, label, small, pre {
+  display: block;
+  margin: 0;
+}
+
+h1 {
+  font-size: unit(@large-type-font-modifier, rem);
+  line-height: unit(@large-type-baseline-lineHeight, em);
+  margin-bottom: unit(-@large-type-baseline-offset, em);
+  padding-top: unit(@large-type-baseline-offset, em);
+}
+
+h2 {
+  font-size: unit(@medium-type-font-modifier, rem);
+  line-height: unit(@medium-type-baseline-lineHeight, em);
+  margin-bottom: unit(-@medium-type-baseline-offset, em);
+  padding-top: unit(@medium-type-baseline-offset, em);
+}
+
+h3, p, li, label, pre {
+  font-size: unit(@standard-type-font-modifier, rem);
+  line-height: unit(@standard-type-baseline-lineHeight, em);
+  margin-bottom: unit(-@standard-type-baseline-offset, em);
+  padding-top: unit(@standard-type-baseline-offset, em);
+}
+
+small {
+  font-size: unit(@small-type-font-modifier, rem);
+  line-height: unit(@small-type-baseline-lineHeight, em);
+  margin-bottom: unit(-@small-type-baseline-offset, em);
+  padding-top: unit(@small-type-baseline-offset, em);
+}

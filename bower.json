@@ -1,0 +1,16 @@
+{
+  "name": "basekick",
+  "version": "0.0.1",
+  "authors": [
+    "Michael Taranto"
+  ],
+  "description": "Kick your type back inline with proper graphic design baseline and let the vertical rhythm flow.",
+  "main": "",
+  "keywords": [
+    "baseline",
+    "vertical",
+    "rhythm"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mjt01"
+}
