@@ -1,6 +1,6 @@
 ## Basekick
 
-An experimental micro style sheet for kicking your basic typographic elements (namely headings, lists and paragraphs) back into line with proper graphic design baseline. The intent is to make it much easier to compose pages while maintaining your vertical rhythm.
+An experimental mixin for kicking your basic typographic elements back into line with proper graphic design baseline. The intent is to make it much easier to compose pages while maintaining your vertical rhythm.
 
 ## The background
 
@@ -24,65 +24,57 @@ However this value has to change from font to font so if sans-serif isnt your th
 
 ## Usage
 
-### Defaults
+Basically pull the mixin into your solution and pass it the following parameters:
 
-The initial variable values are the result of discussions with the designers on my team. This produces the following:
-**Page headings** 40px font size over 45px line height, at normal font weight.
-**Sub headings** 21px font size over 27px line height, at normal font weight.
-**Smaller headings** 14px font size over 18px line height, in bold.
-**Standard type** 14px font size over 18px line height, at normal font weight.
-**Small type** 10px font size over 18px line height, at normal font weight.
+### Parameters
 
-To customise any of these values you can alter the following variables in the less file (you will need to rebuild if not using the less file in your project).
+**bk-type-size-modifier** (required)
 
-### Variables
-**base-font-size** (default: 10)
-Gets set against the html element for everything to scale from.
+The multiplier for type font size, relative to the base font size of your document.
 
-**grid-row-height** (default: 9)
-Number of pixels for each grid row.
+**bk-type-descender-height** (required)
 
-**large-type-rows** (default: 5)
-Number of rows the large type (`h1`) should span.
-
-**large-type-font-modifier** (default: 4)
-Multiplier for large type (`h1`) font size.
-
-**large-type-baseline-offset** (default: 0.225)
 The height of the descender as a ratio of the base font size.
 
-**medium-type-rows** (default: 3)
-Number of rows the medium type (`h2`) should span.
+**bk-type-row-span** (required)
 
-**medium-type-font-modifier** (default: 2.1)
-Multiplier for medium type (`h2`) font size.
+The number of rows the type should span.
 
-**medium-type-baseline-offset** (default: 0.2857)
-The height of the descender as a ratio of the base font size.
+**bk-grid-row-height** (required)
 
-**standard-type-rows** (default: 2)
-Number of rows the standard type (`h3`, `p`, `li`, `label`, `pre`) should span.
+The number of pixels for each grid row.
 
-**standard-type-font-modifier** (default: 1.4)
-Multiplier for standard type (`h3`, `p`, `li`, `label`, `pre`) font size.
+**bk-line-height-override** (optional)
 
-**standard-type-baseline-offset** (default: 0.2857)
-The height of the descender as a ratio of the base font size.
+Explicit line height override to set an exact value in exceptional cases.
 
-**small-type-rows** (default: 2)
-Number of rows the small type (`small`) should span.
+### Example
 
-**small-type-font-modifier** (default: 1)
-Multiplier for small type (`small`) font size.
+Your document's base font size is 10px and your grid rows are 9px high. Your design has standard type being 14px over an 18px line height, and your headings are 21px over a 27px line height.
 
-**small-type-baseline-offset** (default: 0.3)
-The height of the descender as a ratio of the base font size.
+```Less
+@grid-row-height: 9px;                  // Grid has rows that are 9px in height
 
-### Building
+@heading-type-scale: 2.1;               // Document base font is 10px, the heading should be 21px, so scale is 2.1
+@heading-type-descender-height: 0.2857; // At 21px the height of the descender expressed as a scale of the type is 0.2857
+@heading-row-span: 3;                   // Grid rows are 9px, the heading should span a line height of 27px, 27 divided by 9, row span should be 3
 
-The preprocessed file is supplied so you can import it into your build and access the variables from your projects scope if need be. However if you are not using less in your build, or just want to import the css independently you can run the build from command line using `npm run build` (be sure to run `npm install` first if you havent already).
+.card__title {
+  .basekick(@heading-type-scale, @heading-type-descender-height, @heading-row-span, @grid-row-height);
+}
 
-This produces an `output` folder containing both standard and minified versions of the style sheet. So to make any changes, change the variables re-run the build and your good to go.
+@standard-type-scale: 1.4;
+@standard-type-descender-height: 0.2857;
+@standard-row-span: 2;
+
+.card__content {
+  .basekick(@standard-type-scale, @standard-type-descender-height, @standard-row-span, @grid-row-height);
+}
+```
+
+## WIP
+
+- Sass version
 
 ## Credits
 

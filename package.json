@@ -1,6 +1,6 @@
 {
   "name": "basekick",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Kick your type back inline with proper graphic design baseline and let the vertical rhythm flow.",
   "homepage": "https://github.com/mjt01/basekick",
   "bugs": "https://github.com/mjt01/basekick/issues",
@@ -17,16 +17,6 @@
     "vertical rhythm"
   ],
   "main": "",
-  "scripts": {
-    "css": "lessc src/basekick.less > output/basekick.css",
-    "minify": "cssmin output/basekick.css > output/basekick.min.css",
-    "clean": "[ -d \"output\" ] && rm -r output; mkdir output",
-    "build": "npm run clean && npm run css && npm run minify"
-  },
-  "devDependencies": {
-    "cssmin": "^0.4.2",
-    "less": "^2.2.0"
-  },
   "licenses": [
     {
       "type": "MIT",

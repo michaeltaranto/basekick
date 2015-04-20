@@ -1,6 +1,6 @@
 {
   "name": "basekick",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Michael Taranto"
   ],
@@ -8,8 +8,7 @@
   "main": "",
   "keywords": [
     "baseline",
-    "vertical",
-    "rhythm"
+    "vertical rhythm"
   ],
   "license": "MIT",
   "homepage": "https://github.com/mjt01"
