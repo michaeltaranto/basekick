@@ -10,7 +10,7 @@ In CSS the text in a given element will sit centered within its own line-height,
 
 ## The plan
 
-By taking the rules out of the visual designers head and translating them into CSS we should be able to get away without all the 'ad-hock' nudging of content and elements. If the rules that govern their designs are implemented as CSS rules, there should be no exceptions right? (wishful thinking maybe).
+By taking the rules out of the visual designers head and translating them into CSS we should be able to get away without all the ad hoc nudging of content and elements. If the rules that govern their designs are implemented as CSS rules, there should be no exceptions right? (wishful thinking maybe).
 
 ## The problem
 
