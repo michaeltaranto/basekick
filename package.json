@@ -1,7 +1,7 @@
 {
   "name": "basekick",
   "version": "0.0.2",
-  "description": "Kick your type back inline with proper graphic design baseline and let the vertical rhythm flow.",
+  "description": "Typographical baselines for CSS",
   "homepage": "https://github.com/mjt01/basekick",
   "bugs": "https://github.com/mjt01/basekick/issues",
   "repository": {
