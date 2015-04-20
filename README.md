@@ -1,4 +1,6 @@
-## Basekick
+# Basekick
+
+### Typographical baselines for CSS
 
 An experimental mixin for kicking your basic typographic elements back into line with proper graphic design baseline. The intent is to make it much easier to compose pages while maintaining your vertical rhythm.
 
