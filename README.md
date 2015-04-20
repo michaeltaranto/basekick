@@ -77,6 +77,8 @@ Your document's base font size is 10px and your grid rows are 9px high. Your des
 ## WIP
 
 - Sass version
+- Stylus version
+- JS version
 
 ## Credits
 
