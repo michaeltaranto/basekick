@@ -18,7 +18,7 @@ The goal is for everything to be scalable. If the `font-size` is changed or a ne
 
 Import the mixin into your project and pass it the following parameters:
 
-### Parameters
+### LESS
 
 **bk-type-size-modifier** (required)
 
@@ -43,6 +43,20 @@ The font size applied to the `html` element. Used for scaling both font size and
 **bk-line-height-override** (optional)
 
 Explicit line height override to set an exact value in exceptional cases.
+
+### JS
+
+**options** (required)
+
+| Options | Type | Required | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| typeSizeModifier | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
+| typeRowSpan | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
+| descenderHeightScale | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
+| baseFontSize | `int` | Y | The number of pixels for each grid row. |
+| gridRowHeight | `int` | Y | The font size applied to the `html` element. Used for scaling both font size and line heights. |
+| lineHeightOverride | `int` | N | Explicit line height override to set an exact value in exceptional cases. |
+
 
 ### Example
 
@@ -94,7 +108,6 @@ html {
 
 - Sass version
 - Stylus version
-- JS version
 
 ## Credits
 
