@@ -5,7 +5,10 @@
     "Michael Taranto"
   ],
   "description": "Typographical baselines for CSS",
-  "main": "",
+  "main": [
+    "src/basekick.js",
+    "src/basekick.less"
+  ],
   "keywords": [
     "baseline",
     "vertical rhythm"
