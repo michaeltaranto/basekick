@@ -6,8 +6,6 @@ An experimental mixin for realigning your typographic elements with proper graph
 
 In CSS, the text in a given element will sit centered within its own line-height. In the design world the line height is measured from the [baseline](http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Typography_Line_Terms.svg/2000px-Typography_Line_Terms.svg.png) of the text. As a result our UIs often deviate from the designers intentions, requiring a heap of pixel-nudging to get things to line up again.
 
-I explore this problem in more depth in this post: [Teaching CSS to Talk Like a Designer](https://medium.com/seek-ui-engineering/teaching-css-to-talk-like-a-designer-1f3c2b2e28c4).
-
 ## Current Solution
 
 Using CSS transforms we can translate the text back onto the baseline where it should be.
@@ -16,9 +14,18 @@ The goal is for everything to be scalable. If the `font-size` is changed or a ne
 
 ## Usage
 
-Import the mixin into your project and pass it the following parameters:
+Install the mixin into your project, from npm or bower, and pass it the following parameters:
 
 ### LESS
+
+eg.
+```CSS
+@import (reference) "basekick/mixin";
+
+.MyHeading {
+  .basekick(<options>);
+}
+```
 
 **bk-type-size-modifier** (required)
 
@@ -45,6 +52,13 @@ The font size applied to the `html` element. Used for scaling both font size and
 Explicit line height override to set an exact value in exceptional cases.
 
 ### JS
+
+eg.
+```JS
+var basekick = require("basekick");
+
+var myHeadingStyles = basekick(options);
+```
 
 **options** (required)
 

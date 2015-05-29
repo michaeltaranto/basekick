@@ -16,7 +16,7 @@
     "baseline",
     "vertical rhythm"
   ],
-  "main": "src/basekick.js",
+  "main": "index.js",
   "licenses": [
     {
       "type": "MIT",

@@ -6,8 +6,8 @@
   ],
   "description": "Typographical baselines for CSS",
   "main": [
-    "src/basekick.js",
-    "src/basekick.less"
+    "index.js",
+    "mixin.less"
   ],
   "keywords": [
     "baseline",
