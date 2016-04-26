@@ -45,7 +45,7 @@ The number of pixels for each grid row.
 
 **bk-base-font-size** (required)
 
-The font size applied to the `html` element. Used for scaling both font size and line heights.
+The base font size on which your type size modifiers are based.
 
 **bk-line-height-override** (optional)
 
@@ -67,23 +67,23 @@ var myHeadingStyles = basekick(options);
 | typeSizeModifier | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
 | typeRowSpan | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
 | descenderHeightScale | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
-| baseFontSize | `int` | Y | The number of pixels for each grid row. |
-| gridRowHeight | `int` | Y | The font size applied to the `html` element. Used for scaling both font size and line heights. |
+| baseFontSize | `int` | Y | The base font size on which your type size modifiers are based. |
+| gridRowHeight | `int` | Y | The number of pixels for each grid row. |
 | lineHeightOverride | `int` | N | Explicit line height override to set an exact value in exceptional cases. |
 
 
 ### Example
 
 The following example has the following design requirements:
- - Document's base font size is 10px.
- - Grid rows are 9px high.
- - Standard type is 14px over an 2 grid rows.
- - Headings are 21px over a 3 grid rows.
+ - Base font size is `10px`.
+ - Grid rows are `9px` high.
+ - Standard type is `14px` over an 2 grid rows.
+ - Headings are `21px` over a 3 grid rows.
 
 **Variables**
 ```Less
-@base-font-size: 10;                    // Base font size for the document
-@grid-row-height: 9px;                  // Grid rows that are 9px in height
+@base-font-size: 10;                    // Base font size
+@grid-row-height: 9px;                  // Height of grid rows
 @font-descender-height-scale: 0.14;     // The descender height for the specified font expressed as a scale
 
 @standard-type-scale: 1.4;
@@ -92,15 +92,12 @@ The following example has the following design requirements:
 @heading-type-scale: 2.1;
 @heading-row-span: 3;
 ```
-**Reset/base styles**
-```Less
-html {
-  font-size: @base-font-size;
-  font-family: Helvetica Neue;
-}
-```
 **Card component styles**
 ```Less
+.card {
+  font-family: Helvetica Neue;
+}
+
 .card__content {
   .basekick(@standard-type-scale,
             @standard-type-descender-height,
