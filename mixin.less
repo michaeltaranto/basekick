@@ -1,5 +1,5 @@
 .basekick(@bk-type-size-modifier; @bk-type-row-span; @bk-descender-height-scale; @sk-base-font-size; @bk-grid-row-height; @bk-line-height-override: false) {
-  font-size: unit(@bk-type-size-modifier, rem);
+  font-size: calc(@bk-type-size-modifier * unit(@sk-base-font-size, px));
 
   .calculate-line-height-as-scale(@line-height) {
     @line-height-scale: (@line-height / (@bk-type-size-modifier * @sk-base-font-size));
