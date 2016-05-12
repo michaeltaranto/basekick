@@ -11,7 +11,7 @@ var basekick = function (options) {
   var typeOffset = calculateTypeOffset(lineHeightScale);
 
   return {
-    fontSize: 'calc(' + options.typeSizeModifier + ' * ' + options.baseFontSize + 'px)',
+    fontSize: (options.typeSizeModifier * options.baseFontSize) + 'px',
     lineHeight: lineHeightScale + 'em',
     transform: 'translateY(' + typeOffset + 'em)'
   };
