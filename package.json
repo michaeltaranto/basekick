@@ -2,15 +2,15 @@
   "name": "basekick",
   "version": "2.0.1",
   "description": "Typographical baselines for CSS",
-  "homepage": "https://github.com/mjt01/basekick",
-  "bugs": "https://github.com/mjt01/basekick/issues",
+  "homepage": "https://github.com/michaeltaranto/basekick",
+  "bugs": "https://github.com/michaeltaranto/basekick/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mjt01/basekick.git"
+    "url": "https://github.com/michaeltaranto/basekick.git"
   },
   "author": {
     "name": "Michael Taranto",
-    "homepage": "https://github.com/mjt01"
+    "homepage": "https://github.com/michaeltaranto"
   },
   "keywords": [
     "baseline",
@@ -20,7 +20,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://mjt01.mit-license.org"
+      "url": "https://michaeltaranto.mit-license.org"
     }
   ]
 }
