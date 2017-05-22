@@ -6,6 +6,8 @@ An experimental mixin for realigning your typographic elements with proper graph
 
 In CSS, the text in a given element will sit centered within its own line-height. In the design world the line height is measured from the [baseline](http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Typography_Line_Terms.svg/2000px-Typography_Line_Terms.svg.png) of the text. As a result our UIs often deviate from the designers intentions, requiring a heap of pixel-nudging to get things to line up again.
 
+If you want to know more about the how or why, here is a link to a presentation a gave at MelbCSS about the problem this has solved for our teams — [Teaching CSS to talk like a designer](https://www.youtube.com/watch?v=TGHbkTGVqoU)
+
 ## Current Solution
 
 Using CSS transforms we can translate the text back onto the baseline where it should be.
