@@ -1,23 +1,21 @@
 .basekick(@bk-type-size-modifier; @bk-type-row-span; @bk-descender-height-scale; @sk-base-font-size; @bk-grid-row-height; @bk-line-height-override: false) {
-  font-size: unit(@bk-type-size-modifier * @sk-base-font-size, px);
+  @font-size: (@bk-type-size-modifier * @sk-base-font-size);
+  font-size: unit(@font-size, px);
 
-  .calculate-line-height-as-scale(@line-height) {
-    @line-height-scale: (@line-height / (@bk-type-size-modifier * @sk-base-font-size));
-    line-height: unit(@line-height-scale, em);
-  }
-
-  .calculate-type-offset(@line-height-scale) {
+  .calculate-type-offset(@line-height) {
+    @line-height-scale: (@line-height / @font-size);
     @offset: ((@line-height-scale - 1) / 2) + @bk-descender-height-scale;
     transform: translateY(unit(@offset, em));
   }
 
   & when not (isNumber(@bk-line-height-override)) {
-    .calculate-line-height-as-scale((@bk-type-row-span * @bk-grid-row-height));
-    .calculate-type-offset(@line-height-scale);
+    @line-height: (@bk-type-row-span * @bk-grid-row-height);
+    line-height: unit(@line-height, px);
+    .calculate-type-offset(@line-height);
   }
 
   & when (isNumber(@bk-line-height-override)) {
-    .calculate-line-height-as-scale(@bk-line-height-override);
-    .calculate-type-offset(@line-height-scale);
+    line-height: unit(@bk-line-height-override, px);
+    .calculate-type-offset(@bk-line-height-override);
   }
 };

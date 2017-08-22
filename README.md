@@ -4,7 +4,7 @@ An experimental mixin for realigning your typographic elements with proper graph
 
 ## Background
 
-In CSS, the text in a given element will sit centered within its own line-height. In the design world the line height is measured from the [baseline](http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Typography_Line_Terms.svg/2000px-Typography_Line_Terms.svg.png) of the text. As a result our UIs often deviate from the designers intentions, requiring a heap of pixel-nudging to get things to line up again.
+In CSS, the text in a given element will sit centred within its own line-height. In the design world the line height is measured from the [baseline](http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Typography_Line_Terms.svg/2000px-Typography_Line_Terms.svg.png) of the text. As a result our UIs often deviate from the designers intentions, requiring a heap of pixel-nudging to get things to line up again.
 
 If you want to know more about the how or why, here is a link to a presentation a gave at MelbCSS about the problem this has solved for our teams — [Teaching CSS to talk like a designer](https://www.youtube.com/watch?v=TGHbkTGVqoU)
 
@@ -16,7 +16,7 @@ The goal is for everything to be scalable. If the `font-size` is changed or a ne
 
 ## Usage
 
-Install the mixin into your project, from npm or bower, and pass it the following parameters:
+Install the mixin into your project, and pass it the following parameters:
 
 ### LESS
 
@@ -31,7 +31,7 @@ eg.
 
 **bk-type-size-modifier** (required)
 
-The multiplier for type font size, relative to the base font size of your document.
+The multiplier for type font size, relative to the base font size of your typographic hierarchy.
 
 **bk-descender-height-scale** (required)
 
@@ -66,7 +66,7 @@ var myHeadingStyles = basekick(options);
 
 | Options | Type | Required | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| typeSizeModifier | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
+| typeSizeModifier | `int` | Y | The multiplier for type font size, relative to the base font size of your typographic hierarchy. |
 | typeRowSpan | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
 | descenderHeightScale | `int` | Y | The multiplier for type font size, relative to the base font size of your document. |
 | baseFontSize | `int` | Y | The base font size on which your type size modifiers are based. |
@@ -122,10 +122,6 @@ The following example has the following design requirements:
 - Sass version
 - Stylus version
 
-## Credits
-
-Typography images from [Wikipedia](http://en.wikipedia.org)
-
 ## License
 
-[MIT](http://mjt01.mit-license.org)
+[MIT](https://michaeltaranto.mit-license.org)
