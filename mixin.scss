@@ -1,25 +1,32 @@
-@mixin basekick($bk-type-size-modifier, $bk-type-row-span, $bk-descender-height-scale, $sk-base-font-size, $bk-grid-row-height, $bk-line-height-override: false) {
-  font-size: unit($bk-type-size-modifier * $sk-base-font-size, px);
+@function bk-calculateTypeOffset($line-height, $font-size, $descdender-height-scale){
+  $line-height-scale: $line-height / $font-size;
+  $line-height-scale: (($line-height-scale - 1) / 2) + $descdender-height-scale;
+  @return $line-height-scale;
+}
 
-  @mixin calculate-line-height-as-scale($line-height) {
-    $line-height-scale: ($line-height / ($bk-type-size-modifier * $sk-base-font-size));
-    line-height: unit($line-height-scale, em);
-  }
+@mixin bk-render($font-size, $line-height, $type-offset){
+  font-size: $font-size * 1px;
+  line-height: $line-height * 1px;
+  transform: translateY( $type-offset * 1em );
+}
 
-  @mixin calculate-type-offset($line-height-scale) {
-    $offset: (($line-height-scale - 1) / 2) + $bk-descender-height-scale;
-    transform: translateY(unit($offset, em));
-  }
+@mixin basekick(
+  $bk-type-size-modifier,
+  $bk-type-row-span,
+  $bk-descender-height-scale,
+  $bk-base-font-size,
+  $bk-grid-row-height,
+  $bk-line-height-override: false){
 
-  @if type-of($bk-line-height-override) != number {
-    $this-lineheight: $bk-type-row-span * $bk-grid-row-height;
-    @include calculate-line-height-as-scale($this-lineheight);
-    @include calculate-type-offset($line-height-scale);
-  }
+  $font-size: $bk-type-size-modifier * $bk-base-font-size;
 
   @if type-of($bk-line-height-override) == number {
-    @include calculate-line-height-as-scale($bk-line-height-override);
-    @include calculate-type-offset($line-height-scale);
+    $line-height: $bk-line-height-override;
+    $type-offset: bk-calculateTypeOffset($line-height, $font-size, $bk-descender-height-scale);
+    @include bk-render($font-size, $line-height, $type-offset);
+  } @else {
+    $line-height: $bk-grid-row-height * $bk-type-row-span;
+    $type-offset: bk-calculateTypeOffset($line-height, $font-size, $bk-descender-height-scale);
+    @include bk-render($font-size, $line-height, $type-offset);
   }
-
-};
+}
