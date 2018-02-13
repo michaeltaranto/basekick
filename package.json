@@ -1,7 +1,12 @@
 {
   "name": "basekick",
-  "version": "3.0.0",
+  "version": "0.0.0-development",
   "description": "Typographical baselines for CSS",
+  "scripts": {
+    "commit": "git-cz",
+    "commitmsg": "commitlint --edit --extends @commitlint/config-conventional",
+    "semantic-release": "semantic-release"
+  },
   "homepage": "https://github.com/michaeltaranto/basekick",
   "bugs": "https://github.com/michaeltaranto/basekick/issues",
   "repository": {
@@ -22,5 +27,18 @@
       "type": "MIT",
       "url": "https://michaeltaranto.mit-license.org"
     }
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.0",
+    "@commitlint/config-conventional": "^6.1.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^0.14.3",
+    "semantic-release": "^12.4.1"
+  }
 }
