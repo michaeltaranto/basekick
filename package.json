@@ -1,6 +1,6 @@
 {
   "name": "basekick",
-  "version": "3.1.0",
+  "version": "0.0.0-development",
   "description": "Typographical baselines for CSS",
   "scripts": {
     "commit": "git-cz",
