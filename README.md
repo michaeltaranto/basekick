@@ -2,7 +2,7 @@
 
 # Basekick
 
-An experimental mixin for realigning your typographic elements with proper graphic design baseline. The intent is to make it much easier to compose pages while maintaining your vertical rhythm.
+An mixin for realigning your typographic elements with proper graphic design baseline. The intent is to make it much easier to compose pages while maintaining your vertical rhythm.
 
 ## Background
 
