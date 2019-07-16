@@ -1,0 +1,32 @@
+@function bk-calculateTypeOffset($line-height, $font-size, $descdender-height-scale){
+  $line-height-scale: $line-height / $font-size;
+  $line-height-scale: (($line-height-scale - 1) / 2) + $descdender-height-scale;
+  @return $line-height-scale;
+}
+
+@mixin bk-render($font-size, $line-height, $type-offset){
+  font-size: $font-size * 1px;
+  line-height: $line-height * 1px;
+  transform: translateY( $type-offset * 1em );
+}
+
+@mixin basekick(
+  $bk-type-size-modifier,
+  $bk-type-row-span,
+  $bk-descender-height-scale,
+  $bk-base-font-size,
+  $bk-grid-row-height,
+  $bk-line-height-override: false){
+
+  $font-size: $bk-type-size-modifier * $bk-base-font-size;
+
+  @if type-of($bk-line-height-override) == number {
+    $line-height: $bk-line-height-override;
+    $type-offset: bk-calculateTypeOffset($line-height, $font-size, $bk-descender-height-scale);
+    @include bk-render($font-size, $line-height, $type-offset);
+  } @else {
+    $line-height: $bk-grid-row-height * $bk-type-row-span;
+    $type-offset: bk-calculateTypeOffset($line-height, $font-size, $bk-descender-height-scale);
+    @include bk-render($font-size, $line-height, $type-offset);
+  }
+}
