@@ -1,0 +1,19 @@
+basekick($bk-type-size-modifier, $bk-type-row-span, $bk-descender-height-scale, $sk-base-font-size, $bk-grid-row-height, $bk-line-height-override = false){
+  $font-size = ($bk-type-size-modifier * $sk-base-font-size)
+  font-size: unit($font-size, 'px')
+
+  calculate-type-offset($line-height){
+    $line-height-scale = ($line-height / $font-size)
+    $offset = (($line-height-scale - 1) / 2) + $bk-descender-height-scale
+    transform: translateY(unit($offset, 'em'))
+  }
+
+  if ($bk-line-height-override){
+    line-height: unit($bk-line-height-override, 'px')
+    calculate-type-offset($bk-line-height-override)
+  } else {
+    $line-height = ($bk-type-row-span * $bk-grid-row-height)
+    line-height: unit($line-height, 'px')
+    calculate-type-offset($line-height)
+  }
+}
